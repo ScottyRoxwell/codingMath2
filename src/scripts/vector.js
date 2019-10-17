@@ -2,7 +2,7 @@ export const vector = {
   _x: 1,
   _y: 0,
 
-  create: function(x,y){
+  create: function(x, y){
     let obj = Object.create(this);
     obj.setX(x);
     obj.setY(y);
@@ -26,7 +26,7 @@ export const vector = {
     this._y = Math.sin(angle) * length;
   },
   getAngle: function(){
-    return Math.atan2(this._y,this._x);
+    return Math.atan2(this._y, this._x);
   },
   setLength: function(length){
     let angle = this.getAngle();
@@ -34,7 +34,7 @@ export const vector = {
     this._y = Math.sin(angle) * length;
   },
   getLength: function(){
-    return Math.sqrt(Math.pow(this._x,2) + Math.pow(this._y,2));
+    return Math.sqrt(this._x * this._x + this._y * this._y);
   },
   add: function(v2){
     return vector.create(this._x + v2.getX(), this._y + v2.getY());
@@ -45,7 +45,7 @@ export const vector = {
   multiply: function(val){
     return vector.create(this._x * val, this._y * val);
   },
-  divide: function(val){
+  multiply: function(val){
     return vector.create(this._x / val, this._y / val);
   },
   addTo: function(v2){
@@ -56,13 +56,13 @@ export const vector = {
     this._x -= v2.getX();
     this._y -= v2.getY();
   },
-  multiplyBy: function(v2){
-    this._x *= v2.getX();
-    this._y *= v2.getY();
+  multiplyBy: function(val){
+    this._x *= val;
+    this._y *= val;
   },
-  divideBy: function(v2){
-    this._x /= v2.getX();
-    this._y /= v2.getY();
+  divideBy: function(val){
+    this._x /= val;
+    this._y /= val;
   }
 
 }
