@@ -39,7 +39,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
     "core-js": "^3.2.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "three": "^0.109.0"
   }
 }
